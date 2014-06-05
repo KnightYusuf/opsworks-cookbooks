@@ -5,4 +5,10 @@
             driverClassName="com.mysql.jdbc.Driver"
             url="jdbc:mysql://<%= node['deploy'][@application]['database']['host'] %>:3306/<%= node['deploy'][@application]['database']['database'] %>"
             factory="org.apache.commons.dbcp.BasicDataSourceFactory" />
+            
+  
+    <Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager"
+                 memcachedNodes="n1:<%= node['redis']['host']%>:<%=node['redis']['port']%>"
+                 requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$"
+        />
 </Context>

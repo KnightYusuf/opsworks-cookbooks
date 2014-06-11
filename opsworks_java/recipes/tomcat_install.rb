@@ -22,13 +22,19 @@ execute "import_jedis_jar" do
   command "wget http://repo1.maven.org/maven2/redis/clients/jedis/2.4.2/jedis-2.4.2.jar -P #{node['opsworks_java']['tomcat']['lib_dir']}"
 end
 
+execute "import_memcach_manager_jar" do
+  command "wget http://repo1.maven.org/maven2/de/javakaffee/msm/memcached-session-manager/1.8.1/memcached-session-manager-1.8.1.jar  -P #{node['opsworks_java']['tomcat']['lib_dir']}"
+end
+
+execute "import_memcach_manager_tc_jar" do
+  command "wget http://repo1.maven.org/maven2/de/javakaffee/msm/memcached-session-manager-tc7/1.8.1/memcached-session-manager-tc7-1.8.1.jar  -P #{node['opsworks_java']['tomcat']['lib_dir']}"
+end
+
 execute "import_spymemcached_jar" do
   command "wget http://repo1.maven.org/maven2/net/spy/spymemcached/2.10.2/spymemcached-2.10.2.jar  -P #{node['opsworks_java']['tomcat']['lib_dir']}"
 end
 
-execute "import_memcach_manager_jar" do
-  command "wget http://repo1.maven.org/maven2/de/javakaffee/msm/memcached-session-manager-tc7/1.8.1/memcached-session-manager-tc7-1.8.1.jar  -P #{node['opsworks_java']['tomcat']['lib_dir']}"
-end
+
 
 # remove the ROOT webapp, if it got installed by default
 include_recipe 'opsworks_java::remove_root_webapp'

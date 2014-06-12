@@ -33,7 +33,7 @@
     -->
     <Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager"
           sticky="true"
-          memcachedNodes="n1:<%= node['redis']['host']%>:<%= node['redis'][port]%>"
+          memcachedNodes="n1:<%= node['redis']['host']%>:<%= node['redis']['port']%>"
           requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$"
      />
 </Context>

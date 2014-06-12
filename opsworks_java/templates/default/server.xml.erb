@@ -167,7 +167,11 @@
          <!-- <Valve className="com.radiadesign.catalina.session.RedisSessionHandlerValve"/>
 		<Manager className="com.radiadesign.catalina.session.RedisSessionManager" database="0" 
 		     host="<%= node['redis']['host']%>" maxInactiveInterval="60" port="<%=node['redis']['port']%>"/>-->
-    
+    <Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager"
+              sticky="true"
+              memcachedNodes="n1:orionmemcache.tqkzof.cfg.euw1.cache.amazonaws.com:11211"
+              requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$"
+     />
       </Host>
     </Engine>
   </Service>

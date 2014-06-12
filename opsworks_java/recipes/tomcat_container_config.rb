@@ -19,3 +19,13 @@ template 'tomcat server configuration' do
   backup false
   notifies :restart, 'service[tomcat]'
 end
+
+template 'tomcat server configuration' do
+  path ::File.join(node['opsworks_java']['tomcat']['catalina_base_dir'], 'context.xml')
+  source 'context.xml.erb'
+  owner 'root'
+  group 'root'
+  mode 0644
+  backup false
+  notifies :restart, 'service[tomcat]'
+end

@@ -20,7 +20,7 @@ template 'tomcat server configuration' do
   notifies :restart, 'service[tomcat]'
 end
 
-template 'tomcat server configuration' do
+template 'tomcat context configuration' do
   path ::File.join(node['opsworks_java']['tomcat']['catalina_base_dir'], 'context.xml')
   source 'context.xml.erb'
   owner 'root'

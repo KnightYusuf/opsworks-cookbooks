@@ -35,5 +35,6 @@
           sticky="true"
           memcachedNodes="n1:<%= node['redis']['host']%>:<%= node['redis']['port']%>"
           requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$"
+          transcoderFactoryClass="de.javakaffee.web.msm.serializer.kryo.KryoTranscoderFactory"
      />
 </Context>

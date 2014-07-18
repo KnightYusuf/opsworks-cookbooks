@@ -69,7 +69,7 @@ end
 # General settings
 default[:apache][:listen_ports] = [ '80','443' ]
 default[:apache][:contact] = 'ops@example.com'
-default[:apache][:timeout] = 120
+default[:apache][:timeout] = 1200
 default[:apache][:keepalive] = 'Off'
 default[:apache][:keepaliverequests] = 100
 default[:apache][:keepalivetimeout] = 3

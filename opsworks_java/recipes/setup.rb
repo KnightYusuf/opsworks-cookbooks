@@ -1,1 +1,1 @@
-include_recipe 'opsworks_java::tomcat_setup'
+include_recipe 'opsworks_java::tomcat_config'
